@@ -167,6 +167,7 @@ role["first_name"] = "Christian"
 role["last_name"] = "Bale"
 role["character_name"] = "Bruce Wayne"
 role["movie_id"] = movie["id"]
+role["actor_id"] = actor["id"]
 role.save
 
 
@@ -175,6 +176,7 @@ role2["first_name"] = "Michael"
 role2["last_name"] = "Caine"
 role2["character_name"] = "Alfred"
 role2["movie_id"] = movie["id"]
+role2["actor_id"] = actor2["id"]
 role2.save
 
 role3 = Role.new
@@ -182,6 +184,7 @@ role3["first_name"] = "Liam"
 role3["last_name"] = "Neeson"
 role3["character_name"] = "Ra's Al Ghul"
 role3["movie_id"] = movie["id"]
+role3["actor_id"] = actor3["id"]
 role3.save
 
 role4 = Role.new
@@ -189,6 +192,7 @@ role4["first_name"] = "Katie"
 role4["last_name"] = "Holmes"
 role4["character_name"] = "Rachel Dawes"
 role4["movie_id"] = movie["id"]
+role4["actor_id"] = actor4["id"]
 role4.save
 
 role5 = Role.new
@@ -196,6 +200,7 @@ role5["first_name"] = "Gary"
 role5["last_name"] = "Oldman"
 role5["character_name"] = "Commissioner Gordon"
 role5["movie_id"] = movie["id"]
+role5["actor_id"] = actor5["id"]
 role5.save
 
 role6 = Role.new
@@ -203,20 +208,23 @@ role6["first_name"] = "Christian"
 role6["last_name"] = "Bale"
 role6["character_name"] = "Bruce Wayne"
 role6["movie_id"] = movie2["id"]
-role.save
+role6["actor_id"] = actor["id"]
+role6.save
 
 role7 = Role.new
 role7["first_name"] = "Heath"
 role7["last_name"] = "Ledger"
 role7["character_name"] = "Joker"
 role7["movie_id"] = movie2["id"]
-role6.save
+role7["actor_id"] = actor6["id"]
+role7.save
 
 role8 = Role.new
 role8["first_name"] = "Aaron"
 role8["last_name"] = "Eckhart"
 role8["character_name"] = "Harvey Dent"
 role8["movie_id"] = movie2["id"]
+role8["actor_id"] = actor7["id"]
 role8.save
 
 role9 = Role.new
@@ -224,6 +232,7 @@ role9["first_name"] = "Michael"
 role9["last_name"] = "Caine"
 role9["character_name"] = "Alfred"
 role9["movie_id"] = movie2["id"]
+role9["actor_id"] = actor2["id"]
 role9.save
 
 role10 = Role.new
@@ -231,6 +240,7 @@ role10["first_name"] = "Maggie"
 role10["last_name"] = "Gyllenhaal"
 role10["character_name"] = "Rachel Dawes"
 role10["movie_id"] = movie2["id"]
+role10["actor_id"] = actor8["id"]
 role10.save
 
 role11 = Role.new
@@ -238,6 +248,7 @@ role11["first_name"] = "Christian"
 role11["last_name"] = "Bale"
 role11["character_name"] = "Bruce Wayne"
 role11["movie_id"] = movie3["id"]
+role11["actor_id"] = actor["id"]
 role11.save
 
 role12 = Role.new
@@ -245,6 +256,7 @@ role12["first_name"] = "Gary"
 role12["last_name"] = "Oldman"
 role12["character_name"] = "Commissioner Gordon"
 role12["movie_id"] = movie3["id"]
+role12["actor_id"] = actor5["id"]
 role12.save
 
 role13 = Role.new
@@ -252,6 +264,7 @@ role13["first_name"] = "Tom"
 role13["last_name"] = "Hardy"
 role13["character_name"] = "Bane"
 role13["movie_id"] = movie3["id"]
+role13["actor_id"] = actor9["id"]
 role13.save
 
 
@@ -261,6 +274,7 @@ role14["first_name"] = "Joseph"
 role14["last_name"] = "Gordon-Levitt"
 role14["character_name"] = "John Blake"
 role14["movie_id"] = movie3["id"]
+role14["actor_id"] = actor10["id"]
 role14.save
 
 role14 = Role.new
@@ -268,6 +282,7 @@ role14["first_name"] = "Anne"
 role14["last_name"] = "Hathaway"
 role14["character_name"] = "Selina Kyle"
 role14["movie_id"] = movie3["id"]
+role14["actor_id"] = actor11["id"]
 role14.save
 
 
