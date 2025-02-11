@@ -252,8 +252,7 @@ for movie in Movie.all
   title = movie["title"]
   year_released = movie["year_released"]
   rated = movie["rated"]
-  warner_bros = Studio.find_by({"id" => movie["studio"]})
-  puts warner_bros.inspect
+  warner_bros = Studio.find_by({"id" => movie["studio"]})["name"]
   # display the first_name and last_name
   puts "#{title}#{year_released}#{rated}#{warner_bros}"
 end
