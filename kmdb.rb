@@ -75,14 +75,169 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
+
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model.
-# TODO!
+
+#Create Studio
+studio = Studio.new
+studio["name"] = "Warner Bros."
+studio.save
+puts studio.inspect
+
+#Create Movie
+
+movie = Movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = "2005"
+movie["rated"] = "PG-13"
+movie["studio"] = studio["id"]
+
+movie.save
+
+movie2 = Movie.new
+movie2["title"] = "The Dark Knight"
+movie2["year_released"] = "2008"
+movie2["rated"] = "PG-13"
+movie2["studio"] = studio["id"]
+movie2.save
+
+movie3 = Movie.new
+movie3["title"] = "The Dark Knight Rises"
+movie3["year_released"] = "2012"
+movie3["rated"] = "PG-13"
+movie3["studio"] = studio["id"]
+movie3.save
+
+#Create Actor
+
+actor = Actor.new
+actor["name"] = "Christian Bale"
+actor.save
+
+actor2 = Actor.new
+actor2["name"] = "Michael Caine"
+actor2.save
+
+actor3 = Actor.new
+actor3["name"] = "Liam Neeson"
+actor3.save
+
+actor4 = Actor.new
+actor4["name"] = "Katie Holmes"
+actor4.save
+
+actor5 = Actor.new
+actor5["name"] = "Gary Oldman"
+actor5.save
+
+actor6 = Actor.new
+actor6["name"] = "Heath Ledger"
+actor6.save
+
+actor7 = Actor.new
+actor7["name"] = "Aaron Eckhart"
+actor7.save
+
+actor8 = Actor.new
+actor8["name"] = "Maggie Gyllenhaal"
+actor8.save
+
+actor9 = Actor.new
+actor9["name"] = "Tom Hardy"
+actor9.save
+
+actor10 = Actor.new
+actor10["name"] = "Joseph Gordon-Levitt"
+actor10.save
+
+actor11 = Actor.new
+actor11["name"] = "Anne Hathaway"
+actor11.save
+
+
+#Create Role
+
+role = Role.new
+role["first_name"] = "Christian"
+role["last_name"] = "Bale"
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role["first_name"] = "Christian"
+role["last_name"] = "Bale"
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role2 = Role.new
+role2["first_name"] = "Michael"
+role2["last_name"] = "Caine"
+role2["character_name"] = "Alfred"
+role2.save
+
+role3 = Role.new
+role3["first_name"] = "Liam"
+role3["last_name"] = "Neeson"
+role3["character_name"] = "Ra's Al Ghul"
+role3.save
+
+role4 = Role.new
+role4["first_name"] = "Katie"
+role4["last_name"] = "Holmes"
+role4["character_name"] = "Rachel Dawes"
+role4.save
+
+role5 = Role.new
+role5["first_name"] = "Gary"
+role5["last_name"] = "Oldman"
+role5["character_name"] = "Commissioner Gordon"
+role5.save
+
+role6 = Role.new
+role6["first_name"] = "Heath"
+role6["last_name"] = "Ledger"
+role6["character_name"] = "Joker"
+role6.save
+
+role7 = Role.new
+role7["first_name"] = "Aaron"
+role7["last_name"] = "Eckhart"
+role7["character_name"] = "Harvey Dent"
+role7.save
+
+role8 = Role.new
+role8["first_name"] = "Maggie"
+role8["last_name"] = "Gyllenhaal"
+role8["character_name"] = "Rachel Dawes"
+role8.save
+
+role9 = Role.new
+role9["first_name"] = "Tom"
+role9["last_name"] = "Hardy"
+role9["character_name"] = "Bane"
+role9.save
+
+role10 = Role.new
+role10["first_name"] = "Joseph"
+role10["last_name"] = "Gordon-Levitt"
+role10["character_name"] = "John Blake"
+role10.save
+
+role11 = Role.new
+role11["first_name"] = "Anne"
+role11["last_name"] = "Hathaway"
+role11["character_name"] = "Selina Kyle"
+role11.save
+
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
-# TODO!
+
 
 # Prints a header for the movies output
 puts "Movies"
@@ -90,7 +245,18 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-# TODO!
+
+movies=Movie.all
+for movie in Movie.all
+  # read each contact row's first_name and last_name columns
+  title = movie["title"]
+  year_released = movie["year_released"]
+  rated = movie["rated"]
+  warner_bros = Studio.find_by({"id" => movie["studio"]})
+  puts warner_bros.inspect
+  # display the first_name and last_name
+  puts "#{title}#{year_released}#{rated}#{warner_bros}"
+end
 
 # Prints a header for the cast output
 puts ""
@@ -99,4 +265,13 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-# TODO!
+roles=Role.all
+for role in Role.all
+  # read each contact row's first_name and last_name columns
+  title = movie["title"]
+  first_name = role["first_name"]
+  last_name = role["last_name"]
+  character_name = role["character_name"]
+  # display the first_name and last_name
+  puts "#{title}#{first_name}#{last_name}#{character_name}"
+end
