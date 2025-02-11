@@ -303,7 +303,7 @@ puts ""
   roles = Role.all
   for role in roles
 
-  movie = Movie.find_by({id: role["movie_id"]})["name"]
+  movie = Movie.find_by({"id" => role["movie_id"]})["name"]
   first_name = role["first_name"]
   last_name = role["last_name"]
   character_name = role["character_name"]
