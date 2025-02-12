@@ -95,7 +95,7 @@ movie = Movie.new
 movie["title"] = "Batman Begins"
 movie["year_released"] = "2005"
 movie["rated"] = "PG-13"
-movie["studio"] = studio["id"]
+movie["studio_id"] = studio["id"]
 
 movie.save
 
@@ -103,14 +103,14 @@ movie2 = Movie.new
 movie2["title"] = "The Dark Knight"
 movie2["year_released"] = "2008"
 movie2["rated"] = "PG-13"
-movie2["studio"] = studio["id"]
+movie2["studio_id"] = studio["id"]
 movie2.save
 
 movie3 = Movie.new
 movie3["title"] = "The Dark Knight Rises"
 movie3["year_released"] = "2012"
 movie3["rated"] = "PG-13"
-movie3["studio"] = studio["id"]
+movie3["studio_id"] = studio["id"]
 movie3.save
 
 #Create Actor
@@ -303,7 +303,7 @@ for movie in Movie.all
   title = movie["title"]
   year_released = movie["year_released"]
   rated = movie["rated"]
-  warner_bros = Studio.find_by({"id" => movie["studio"]})["name"]
+  warner_bros = Studio.find_by({"id" => movie["studio_id"]})["name"]
   # display the first_name and last_name
   puts "#{title}#{year_released}#{rated}#{warner_bros}"
 end
@@ -318,7 +318,7 @@ puts ""
   roles = Role.all
   for role in roles
 
-  movie = Movie.find_by({"id" => role["movie_id"]})["name"]
+  movie = Movie.find_by({"id" => role["movie_id"]})["title"]
   first_name = role["first_name"]
   last_name = role["last_name"]
   character_name = role["character_name"]
